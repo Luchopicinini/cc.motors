@@ -143,8 +143,7 @@ export default function Admin() {
 
   const inputClass = 'w-full bg-white border border-zinc-200 focus:border-black text-black px-4 py-3 text-sm outline-none transition-all rounded-lg placeholder:text-zinc-300'
   const labelClass = 'text-zinc-500 text-xs font-bold tracking-widest uppercase block mb-2'
-  const marcas = ['Audi','BMW','BYD','Changan','Chery','Chevrolet','Citroen','DFSK','Dodge','Fiat','Ford','GAC','Geely','GWM','Honda','Hyundai','Infiniti','JAC','Jaguar','Jeep','Kia','Land Rover','Lexus','Lifan','Mahindra','Mazda','Mercedes-Benz','MG','Mini','Mitsubishi','Nissan','Peugeot','Porsche','RAM','Renault','Seat','Skoda','Subaru','Suzuki','Toyota','Volkswagen','Volvo','Zotye']
-
+  const marcas = ['AUDI','BMW','BYD','CHANGAN','CHERY','CHEVROLET','CITROEN','DFSK','DODGE','FIAT','FORD','GAC','GEELY','GWM','HONDA','HYUNDAI','INFINITI','JAC','JAGUAR','JEEP','KIA','LAND ROVER','LEXUS','LIFAN','MAHINDRA','MAZDA','MERCEDES-BENZ','MG','MINI','MITSUBISHI','NISSAN','PEUGEOT','PORSCHE','RAM','RENAULT','SEAT','SKODA','SUBARU','SUZUKI','TOYOTA','VOLKSWAGEN','VOLVO','ZOTYE']
   return (
     <div className="bg-zinc-50 min-h-screen pt-24 pb-20 px-6">
       <div className="max-w-6xl mx-auto">

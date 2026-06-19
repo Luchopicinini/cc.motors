@@ -17,42 +17,49 @@ export default function Home() {
     fetchAutos()
   }, [])
 
+  const beneficios = [
+    { icono: '🛡️', titulo: 'Garantía extendida', desc: 'Cada vehículo cuenta con cobertura completa respaldada por los mejores estándares de la industria.' },
+    { icono: '💳', titulo: 'Financiamiento flexible', desc: 'Planes personalizados con las mejores tasas del mercado.' },
+    { icono: '🕐', titulo: 'Atención 24/7', desc: 'Soporte dedicado cuando lo necesites, sin importar la hora.' },
+    { icono: '🏆', titulo: 'Certificación premium', desc: 'Cada vehículo supera 150 puntos de inspección rigurosa.' },
+    { icono: '🚚', titulo: 'Entrega a domicilio', desc: 'Tu vehículo llega directamente a tu puerta.' },
+    { icono: '🎧', titulo: 'Asesor personal', desc: 'Un experto dedicado exclusivamente a tu búsqueda.' },
+  ]
+
   return (
     <div className="bg-white">
 
-      <section className="relative min-h-screen flex items-end overflow-hidden bg-zinc-900" style={{backgroundImage:"url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600')", backgroundSize:'cover', backgroundPosition:'center'}}>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20"></div>
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-24">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-            <p className="text-zinc-400 text-xs tracking-[0.4em] uppercase mb-6">Las Condes · Santiago · Chile</p>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-none mb-6">
-              El auto<br />que buscas<br /><span className="text-zinc-400">te espera.</span>
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-zinc-100 via-white to-white overflow-hidden pt-20">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <span className="w-8 h-px bg-zinc-300"></span>
+              <p className="text-zinc-500 text-xs tracking-[0.3em] uppercase">Premium Collection</p>
+              <span className="w-8 h-px bg-zinc-300"></span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-black leading-[1.05] mb-8">
+              Experiencia automotriz<br />CC Motors
             </h1>
-            <p className="text-zinc-300 text-base max-w-md mb-10 leading-relaxed">Vehículos premium con financiamiento, garantía y la mejor atención del mercado en Las Condes.</p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-16">
-              <Link href="/stock" className="bg-white hover:bg-zinc-100 text-black font-bold text-sm px-10 py-4 transition-colors text-center">Ver vehículos</Link>
-              <a href="https://wa.me/56988276054" target="_blank" rel="noopener noreferrer" className="border border-white/30 hover:border-white text-white font-bold text-sm px-10 py-4 transition-colors text-center">WhatsApp</a>
-            </div>
-            <div className="grid grid-cols-3 gap-8 max-w-sm border-t border-white/10 pt-8">
-              {[{ num: '+50', label: 'Vehículos' }, { num: '+200', label: 'Clientes' }, { num: '5★', label: 'Google' }].map((s) => (
-                <div key={s.label}>
-                  <p className="text-2xl font-black text-white">{s.num}</p>
-                  <p className="text-zinc-500 text-xs mt-1 tracking-widest uppercase">{s.label}</p>
-                </div>
-              ))}
-            </div>
+            <p className="text-zinc-500 text-base md:text-lg max-w-xl mx-auto mb-10">
+              Vehículos seleccionados para quienes exigen lo extraordinario.
+            </p>
+            <Link href="/stock" className="inline-flex items-center gap-2 bg-black hover:bg-zinc-800 text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-colors">
+              Explorar vehículos
+              <span>→</span>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 px-6 max-w-7xl mx-auto">
+      <section className="py-24 px-6 max-w-7xl mx-auto">
         <FadeIn>
-          <div className="flex items-center justify-between mb-10">
-            <div>
-              <p className="text-xs tracking-[0.2em] text-zinc-400 uppercase mb-2">Últimas incorporaciones</p>
-              <h2 className="text-3xl font-black tracking-tight text-black">Stock reciente</h2>
-            </div>
-            <Link href="/stock" className="text-sm font-bold text-black hover:text-zinc-500 transition-colors border-b border-black pb-0.5">Ver todo →</Link>
+          <div className="flex items-center gap-3 mb-3">
+            <span className="w-8 h-px bg-zinc-300"></span>
+            <p className="text-zinc-500 text-xs tracking-[0.3em] uppercase">Recién llegados</p>
+          </div>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-black">Lo más nuevo en nuestro catálogo</h2>
+            <Link href="/stock" className="text-sm font-semibold text-black hover:text-zinc-500 transition-colors whitespace-nowrap">Ver todo →</Link>
           </div>
         </FadeIn>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -62,49 +69,69 @@ export default function Home() {
             </FadeIn>
           ))}
         </div>
-        <FadeIn delay={0.3}>
-          <div className="text-center mt-10">
-            <Link href="/stock" className="inline-block border border-black hover:bg-black hover:text-white text-black font-bold text-sm px-10 py-4 transition-colors">Ver stock completo</Link>
-          </div>
-        </FadeIn>
       </section>
 
-      <section className="py-16 bg-zinc-950 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-zinc-800">
-              {[
-                { num: '01', titulo: 'Revisión completa', desc: 'Cada vehículo pasa por una inspección exhaustiva antes de publicarse en nuestro stock.' },
-                { num: '02', titulo: 'Financiamiento', desc: 'Trabajamos con los mejores bancos para conseguirte la tasa más conveniente del mercado.' },
-                { num: '03', titulo: 'Entrega en 48h', desc: 'Gestionamos toda la documentación para que puedas manejar tu auto en tiempo récord.' },
-              ].map((item) => (
-                <div key={item.num} className="bg-zinc-950 p-10">
-                  <p className="text-zinc-700 font-black text-4xl mb-6">{item.num}</p>
-                  <p className="font-black text-white text-lg mb-3">{item.titulo}</p>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <section className="py-20 px-6">
+      <section className="py-24 px-6 bg-zinc-50 border-t border-zinc-100">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <div className="bg-zinc-950 text-white p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div>
-                <p className="text-xs tracking-[0.3em] text-zinc-500 uppercase mb-3">¿Listo para comenzar?</p>
-                <h2 className="text-4xl font-black tracking-tight">Tu próximo auto<br />está a un click.</h2>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-                <Link href="/stock" className="bg-white hover:bg-zinc-100 text-black font-bold text-sm px-8 py-4 transition-colors text-center">Ver stock</Link>
-                <a href="https://wa.me/56988276054" target="_blank" rel="noopener noreferrer" className="border border-white/20 hover:border-white text-white font-bold text-sm px-8 py-4 transition-colors text-center">WhatsApp</a>
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-px bg-zinc-300"></span>
+              <p className="text-zinc-500 text-xs tracking-[0.3em] uppercase">Por qué elegirnos</p>
             </div>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-black mb-3">Una experiencia premium<br />en cada detalle</h2>
+            <p className="text-zinc-500 text-base mb-14 max-w-lg">Nos dedicamos a ofrecer el más alto estándar en cada paso del proceso.</p>
           </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <FadeIn>
+              <div className="bg-white border border-zinc-200 rounded-3xl p-10 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-2xl mb-6">{beneficios[0].icono}</div>
+                  <h3 className="text-black font-bold text-2xl mb-3">{beneficios[0].titulo}</h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">{beneficios[0].desc}</p>
+                </div>
+                <Link href="/stock" className="text-black text-sm font-semibold mt-6 inline-flex items-center gap-2 hover:gap-3 transition-all">Conoce más →</Link>
+              </div>
+            </FadeIn>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {beneficios.slice(1, 3).map((b, i) => (
+                <FadeIn key={b.titulo} delay={i * 0.1}>
+                  <div className="bg-white border border-zinc-200 rounded-3xl p-7 h-full">
+                    <div className="w-11 h-11 rounded-xl bg-zinc-100 flex items-center justify-center text-xl mb-5">{b.icono}</div>
+                    <h3 className="text-black font-bold text-base mb-2">{b.titulo}</h3>
+                    <p className="text-zinc-500 text-xs leading-relaxed">{b.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
+            {beneficios.slice(3).map((b, i) => (
+              <FadeIn key={b.titulo} delay={i * 0.1}>
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 h-full">
+                  <div className="w-11 h-11 rounded-xl bg-zinc-100 flex items-center justify-center text-xl mb-5">{b.icono}</div>
+                  <h3 className="text-black font-bold text-base mb-2">{b.titulo}</h3>
+                  <p className="text-zinc-500 text-xs leading-relaxed">{b.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
+
+<section className="bg-white text-black py-24 px-6">
+  <div className="max-w-3xl mx-auto text-center">
+    <FadeIn>
+      <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">Tu próximo auto está más cerca de lo que crees.</h2>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Link href="/stock" className="bg-black hover:bg-zinc-800 text-white font-semibold text-sm px-8 py-4 rounded-full transition-colors text-center">Ver catálogo</Link>
+        <a href="https://wa.me/56988276054" target="_blank" rel="noopener noreferrer" className="border border-black/20 hover:border-black text-black font-semibold text-sm px-8 py-4 rounded-full transition-colors text-center">Escribir por WhatsApp</a>
+      </div>
+    </FadeIn>
+  </div>
+</section>
 
     </div>
   )
