@@ -29,7 +29,9 @@ export default function CardAuto({ auto }: { auto: any }) {
         ) : (
           <div className="w-full h-full flex items-center justify-center text-zinc-300 text-xs">SIN IMAGEN</div>
         )}
-        <div className="absolute top-3 left-3 bg-white/95 text-black text-xs font-bold px-3 py-1.5 rounded-full">Recién llegado</div>
+        {!auto.vendido && (
+  <div className="absolute top-3 left-3 bg-white/95 text-black text-xs font-bold px-3 py-1.5 rounded-full">Recién llegado</div>
+)}
         {auto.vendido && (
           <div className="absolute top-3 right-3 bg-black text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-red-400 rounded-full"></span>

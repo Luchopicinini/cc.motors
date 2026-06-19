@@ -18,12 +18,11 @@ export default function Home() {
   }, [])
 
   const beneficios = [
-    { icono: '🛡️', titulo: 'Garantía extendida', desc: 'Cada vehículo cuenta con cobertura completa respaldada por los mejores estándares de la industria.' },
+   
     { icono: '💳', titulo: 'Financiamiento flexible', desc: 'Planes personalizados con las mejores tasas del mercado.' },
     { icono: '🕐', titulo: 'Atención 24/7', desc: 'Soporte dedicado cuando lo necesites, sin importar la hora.' },
-    { icono: '🏆', titulo: 'Certificación premium', desc: 'Cada vehículo supera 150 puntos de inspección rigurosa.' },
-    { icono: '🚚', titulo: 'Entrega a domicilio', desc: 'Tu vehículo llega directamente a tu puerta.' },
-    { icono: '🎧', titulo: 'Asesor personal', desc: 'Un experto dedicado exclusivamente a tu búsqueda.' },
+    { icono: '🏆', titulo: 'Certificación premium', desc: 'Cada vehículo supera 50 puntos de inspección rigurosa.' },
+    { icono: '🎧', titulo: 'Asesor personal', desc: 'Un experto dedicado exclusivamente a tu búsqueda.' }
   ]
 
   return (

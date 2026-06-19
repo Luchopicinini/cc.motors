@@ -28,8 +28,8 @@ export default function Contacto() {
   const contactos = [
     { label: 'WhatsApp', valor: '+56 9 8827 6054', sub: 'Respuesta inmediata', href: 'https://wa.me/56988276054', icono: <IconoWhatsapp /> },
     { label: 'Dirección', valor: 'Av. Apoquindo 7935', sub: 'Las Condes, Santiago', href: 'https://maps.google.com/?q=Av+Apoquindo+7935+Las+Condes', icono: <IconoPin /> },
-    { label: 'Horario', valor: 'Lun – Sáb 9:00 – 19:00', sub: 'Atención presencial y remota', href: null, icono: <IconoReloj /> },
-    { label: 'Instagram', valor: '@ccmotors_', sub: 'Síguenos', href: 'https://www.instagram.com/ccmotors_', icono: <IconoInstagram /> },
+
+    { label: 'Instagram', valor: '@ccmotors.cl', sub: 'Síguenos', href: 'https://www.instagram.com/ccmotors.cl', icono: <IconoInstagram /> },
   ]
 
   return (

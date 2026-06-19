@@ -136,6 +136,11 @@ export default function Admin() {
     fetchAutos()
   }
 
+  const handleVendido = async (auto: any) => {
+    await supabase.from('autos').update({ vendido: !auto.vendido }).eq('id', auto.id)
+    fetchAutos()
+  }
+
   const handleLogout = async () => {
     await supabase.auth.signOut()
     router.push('/admin/login')
@@ -242,6 +247,7 @@ export default function Admin() {
                       <p className="text-zinc-400 text-xs mt-0.5">{auto.año} · {auto.km?.toLocaleString()} km · ${auto.precio?.toLocaleString('es-CL')}</p>
                     </div>
                     <div className="flex gap-2 flex-shrink-0">
+                      <button onClick={() => handleVendido(auto)} className={"text-xs font-bold transition-colors px-3 py-1.5 border rounded-lg " + (auto.vendido ? "text-white bg-black border-black" : "text-zinc-400 hover:text-black border-zinc-200 hover:border-black")}>{auto.vendido ? "Vendido ✓" : "Marcar vendido"}</button>
                       <button onClick={() => handleEditar(auto)} className="text-xs font-bold text-zinc-400 hover:text-black transition-colors px-3 py-1.5 border border-zinc-200 hover:border-black rounded-lg">Editar</button>
                       <button onClick={() => handleEliminar(auto.id)} className="text-xs font-bold text-zinc-400 hover:text-red-500 transition-colors px-3 py-1.5 border border-zinc-200 hover:border-red-300 rounded-lg">Eliminar</button>
                     </div>

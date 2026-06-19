@@ -22,8 +22,8 @@ export default function Footer() {
             <p className="text-xs tracking-[0.3em] uppercase text-zinc-500 mb-2">Contacto</p>
             <p className="text-zinc-400 text-sm">Av. Apoquindo 7935<br />Las Condes, Santiago</p>
             <a href="tel:+56988276054" className="text-white text-sm font-medium hover:text-zinc-400 transition-colors">+56 9 8827 6054</a>
-            <p className="text-zinc-400 text-sm">Lun–Sáb 9:00–19:00</p>
-            <a href="https://www.instagram.com/ccmotors_" target="_blank" rel="noopener noreferrer" className="text-white text-sm font-medium hover:text-zinc-400 transition-colors">@ccmotors_</a>
+     
+            <a href="https://www.instagram.com/ccmotors.cl" target="_blank" rel="noopener noreferrer" className="text-white text-sm font-medium hover:text-zinc-400 transition-colors">@ccmotors.cl</a>
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-4">
