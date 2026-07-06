@@ -10,6 +10,9 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif'
 export const metadata: Metadata = {
   title: 'CC Motors',
   description: 'Vehículos premium en Santiago',
+  icons: {
+    icon: '/favicon.ico',
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
