@@ -35,6 +35,7 @@ export default function Stock() {
     return cumpleMarca && cumplePrecio && cumpleTransmision
   })
   const selectClass = 'bg-white border border-zinc-200 hover:border-black text-black text-sm px-4 py-2.5 focus:outline-none focus:border-black transition-all cursor-pointer rounded-lg'
+  const labelClass = 'text-xs font-semibold text-zinc-400 uppercase tracking-wide mb-1 block'
 
   return (
     <div className="bg-white pt-24 min-h-screen">
@@ -46,10 +47,19 @@ export default function Stock() {
           </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <div className="bg-zinc-50 rounded-xl p-4 flex flex-wrap gap-3 mb-8 items-center">
-            <select value={marcaFiltro} onChange={(e) => setMarcaFiltro(e.target.value)} className={selectClass}>{marcas.map((m) => <option key={m} value={m}>{m}</option>)}</select>
-            <select value={precioFiltro} onChange={(e) => setPrecioFiltro(e.target.value)} className={selectClass}>{precios.map((p) => <option key={p.label} value={p.label}>{p.label}</option>)}</select>
-            <select value={transmisionFiltro} onChange={(e) => setTransmisionFiltro(e.target.value)} className={selectClass}>{transmisiones.map((t) => <option key={t} value={t}>{t}</option>)}</select>
+          <div className="bg-zinc-50 rounded-xl p-4 flex flex-wrap gap-3 mb-8 items-end">
+            <div>
+              <label className={labelClass}>Marca</label>
+              <select value={marcaFiltro} onChange={(e) => setMarcaFiltro(e.target.value)} className={selectClass}>{marcas.map((m) => <option key={m} value={m}>{m}</option>)}</select>
+            </div>
+            <div>
+              <label className={labelClass}>Precio</label>
+              <select value={precioFiltro} onChange={(e) => setPrecioFiltro(e.target.value)} className={selectClass}>{precios.map((p) => <option key={p.label} value={p.label}>{p.label}</option>)}</select>
+            </div>
+            <div>
+              <label className={labelClass}>Transmisión</label>
+              <select value={transmisionFiltro} onChange={(e) => setTransmisionFiltro(e.target.value)} className={selectClass}>{transmisiones.map((t) => <option key={t} value={t}>{t}</option>)}</select>
+            </div>
             {(marcaFiltro !== 'Todas' || precioFiltro !== 'Todos' || transmisionFiltro !== 'Todas') && (
               <button onClick={() => { setMarcaFiltro('Todas'); setPrecioFiltro('Todos'); setTransmisionFiltro('Todas') }} className="text-sm font-bold text-zinc-500 hover:text-black transition-colors px-3 py-2">Limpiar ✕</button>
             )}

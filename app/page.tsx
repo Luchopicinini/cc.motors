@@ -17,13 +17,7 @@ export default function Home() {
     fetchAutos()
   }, [])
 
-  const beneficios = [
-   
-    { icono: '💳', titulo: 'Financiamiento flexible', desc: 'Planes personalizados con las mejores tasas del mercado.' },
-    { icono: '🕐', titulo: 'Atención 24/7', desc: 'Soporte dedicado cuando lo necesites, sin importar la hora.' },
-    { icono: '🏆', titulo: 'Certificación premium', desc: 'Cada vehículo supera 50 puntos de inspección rigurosa.' },
-    { icono: '🎧', titulo: 'Asesor personal', desc: 'Un experto dedicado exclusivamente a tu búsqueda.' }
-  ]
+
 
   return (
     <div className="bg-white">
@@ -81,56 +75,22 @@ export default function Home() {
             <p className="text-zinc-500 text-base mb-14 max-w-lg">Nos dedicamos a ofrecer el más alto estándar en cada paso del proceso.</p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <FadeIn>
-              <div className="bg-white border border-zinc-200 rounded-3xl p-10 h-full flex flex-col justify-between">
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-2xl mb-6">{beneficios[0].icono}</div>
-                  <h3 className="text-black font-bold text-2xl mb-3">{beneficios[0].titulo}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">{beneficios[0].desc}</p>
-                </div>
-                <Link href="/stock" className="text-black text-sm font-semibold mt-6 inline-flex items-center gap-2 hover:gap-3 transition-all">Conoce más →</Link>
-              </div>
-            </FadeIn>
+          {/* Acá va tu grid de features/cards si tenías contenido pensado para esta sección */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {beneficios.slice(1, 3).map((b, i) => (
-                <FadeIn key={b.titulo} delay={i * 0.1}>
-                  <div className="bg-white border border-zinc-200 rounded-3xl p-7 h-full">
-                    <div className="w-11 h-11 rounded-xl bg-zinc-100 flex items-center justify-center text-xl mb-5">{b.icono}</div>
-                    <h3 className="text-black font-bold text-base mb-2">{b.titulo}</h3>
-                    <p className="text-zinc-500 text-xs leading-relaxed">{b.desc}</p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
-            {beneficios.slice(3).map((b, i) => (
-              <FadeIn key={b.titulo} delay={i * 0.1}>
-                <div className="bg-white border border-zinc-200 rounded-3xl p-7 h-full">
-                  <div className="w-11 h-11 rounded-xl bg-zinc-100 flex items-center justify-center text-xl mb-5">{b.icono}</div>
-                  <h3 className="text-black font-bold text-base mb-2">{b.titulo}</h3>
-                  <p className="text-zinc-500 text-xs leading-relaxed">{b.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
-<section className="bg-white text-black py-24 px-6">
-  <div className="max-w-3xl mx-auto text-center">
-    <FadeIn>
-      <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">Tu próximo auto está más cerca de lo que crees.</h2>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="/stock" className="bg-black hover:bg-zinc-800 text-white font-semibold text-sm px-8 py-4 rounded-full transition-colors text-center">Ver catálogo</Link>
-        <a href="https://wa.me/56988276054" target="_blank" rel="noopener noreferrer" className="border border-black/20 hover:border-black text-black font-semibold text-sm px-8 py-4 rounded-full transition-colors text-center">Escribir por WhatsApp</a>
-      </div>
-    </FadeIn>
-  </div>
-</section>
+      <section className="bg-white text-black py-24 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">Tu próximo auto está más cerca de lo que crees.</h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/stock" className="bg-black hover:bg-zinc-800 text-white font-semibold text-sm px-8 py-4 rounded-full transition-colors text-center">Ver catálogo</Link>
+              <a href="https://wa.me/56988276054" target="_blank" rel="noopener noreferrer" className="border border-black/20 hover:border-black text-black font-semibold text-sm px-8 py-4 rounded-full transition-colors text-center">Escribir por WhatsApp</a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
     </div>
   )
