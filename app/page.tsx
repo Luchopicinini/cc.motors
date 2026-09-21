@@ -44,6 +44,34 @@ export default function Home() {
         </div>
       </section>
 
+            <section className="py-16 px-6 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <FadeIn>
+      <div className="flex items-center gap-3 mb-4">
+        <span className="w-8 h-px bg-zinc-300"></span>
+        <p className="text-zinc-500 text-xs tracking-[0.3em] uppercase">CC Motors en acción</p>
+      </div>
+      <h2 className="text-3xl font-black tracking-tight text-black mb-10">Conoce nuestra experiencia</h2>
+    </FadeIn>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {['/video1.mp4', '/video2.mp4', '/video3.mp4'].map((src, i) => (
+        <FadeIn key={i} delay={i * 0.1}>
+          <div className="rounded-2xl overflow-hidden bg-zinc-100 aspect-[9/16]">
+            <video
+              src={src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </FadeIn>
+      ))}
+    </div>
+  </div>
+</section>
+
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-3">
@@ -63,6 +91,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+
 
       <section className="py-24 px-6 bg-zinc-50 border-t border-zinc-100">
         <div className="max-w-7xl mx-auto">
